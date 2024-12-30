@@ -11,6 +11,8 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import AddService from "./Components/AddService";
+import ServiceList from "./Components/ServiceList";
+import PrivateRoute from "./PrivateLayout/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +34,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/add-service',
-        element: <AddService />,
+        element: <PrivateRoute><AddService /></PrivateRoute>,
+      },
+      {
+        path: '/services',
+        element: <ServiceList />,
+        loader:()=>fetch("http://localhost:5000/services"),
       },
     ],
     

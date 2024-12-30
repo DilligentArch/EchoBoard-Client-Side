@@ -19,13 +19,13 @@ const Navbar = () => {
     setIsLoading(true);
   };
 
-  if (isLoading || loading) {
-    return (
-      <div className="flex min-h-screen justify-center items-center">
-        <span className="loading loading-bars loading-lg"></span>
-      </div>
-    );
-  }
+  // if (isLoading || loading) {
+  //   return (
+  //     <div className="flex min-h-screen justify-center items-center">
+  //       <span className="loading loading-bars loading-lg"></span>
+  //     </div>
+  //   );
+  // }
 
   return (
     <nav className="navbar bg-indigo-600 text-white max-w-screen-2xl mx-auto shadow-md">
