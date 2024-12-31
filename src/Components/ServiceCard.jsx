@@ -9,7 +9,7 @@ const ServiceCard = ({ singleData }) => {
       <img
         src={image}
         alt={title}
-        className="w-3/4 h-2/5 mx-auto "
+        className="w-36 h-36 mx-auto my-auto "
       />
 
       {/* Content */}

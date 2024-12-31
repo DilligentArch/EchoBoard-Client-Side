@@ -13,6 +13,7 @@ import Register from "./Components/Register";
 import AddService from "./Components/AddService";
 import ServiceList from "./Components/ServiceList";
 import PrivateRoute from "./PrivateLayout/PrivateRoute";
+import MyService from "./Components/MyService";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,13 @@ const router = createBrowserRouter([
         path: '/services',
         element: <ServiceList />,
         loader:()=>fetch("http://localhost:5000/services"),
+      },
+      {
+        path: "/my-service/:email", 
+        element: <PrivateRoute>
+        <MyService />
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.email}`),
       },
     ],
     

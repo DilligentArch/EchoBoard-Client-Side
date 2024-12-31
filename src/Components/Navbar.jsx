@@ -79,7 +79,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/my-services" onClick={handleNavLinkClick}>
+                  <NavLink   to={`my-services/${user.email}`} onClick={handleNavLinkClick}>
                     My Services
                   </NavLink>
                 </li>
@@ -153,7 +153,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/my-services"
+                  to={`my-service/${user.email}`}
                   className={({ isActive }) =>
                     isActive
                       ? "text-yellow-300 font-bold"
