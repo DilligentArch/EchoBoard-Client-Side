@@ -19,16 +19,8 @@ const Navbar = () => {
     setIsLoading(true);
   };
 
-  // if (isLoading || loading) {
-  //   return (
-  //     <div className="flex min-h-screen justify-center items-center">
-  //       <span className="loading loading-bars loading-lg"></span>
-  //     </div>
-  //   );
-  // }
-
   return (
-    <nav className="navbar bg-indigo-600 text-white max-w-screen-2xl mx-auto shadow-md">
+    <nav className="navbar bg-blue-800 text-white max-w-screen-2xl mx-auto shadow-lg">
       <Toaster />
       <div className="navbar-start">
         <div className="dropdown">
@@ -54,7 +46,7 @@ const Navbar = () => {
           </button>
           <ul
             tabIndex="0"
-            className="menu menu-sm dropdown-content mt-3 z-[1] w-52 rounded-box bg-white p-2 shadow text-indigo-600"
+            className="menu menu-sm dropdown-content mt-3 z-[1] w-52 rounded-box bg-white p-2 shadow text-blue-800"
           >
             <li>
               <NavLink to="/" onClick={handleNavLinkClick}>
@@ -79,7 +71,10 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink   to={`my-services/${user.email}`} onClick={handleNavLinkClick}>
+                  <NavLink
+                    to={`my-service/${user.email}`}
+                    onClick={handleNavLinkClick}
+                  >
                     My Services
                   </NavLink>
                 </li>
@@ -87,12 +82,15 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-        <NavLink
-          to="/"
-          className="btn btn-ghost normal-case text-2xl font-bold text-white"
-        >
-          EchoBoard
-        </NavLink>
+        <div className="flex items-center">
+          <img src="/complaint.png" alt="EchoBoard" className="w-16 h-16" />
+          <NavLink
+            to="/"
+            className="ml-3 text-3xl font-bold text-cyan-300 hover:text-cyan-400 transition duration-300"
+          >
+            EchoBoard
+          </NavLink>
+        </div>
       </div>
 
       <div className="navbar-center hidden lg:flex">
@@ -102,8 +100,8 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-yellow-300 font-bold"
-                  : "text-white hover:text-yellow-300"
+                  ? "text-cyan-300 font-bold"
+                  : "text-white hover:text-cyan-300 transition duration-300"
               }
               onClick={handleNavLinkClick}
             >
@@ -115,8 +113,8 @@ const Navbar = () => {
               to="/services"
               className={({ isActive }) =>
                 isActive
-                  ? "text-yellow-300 font-bold"
-                  : "text-white hover:text-yellow-300"
+                  ? "text-cyan-300 font-bold"
+                  : "text-white hover:text-cyan-300 transition duration-300"
               }
               onClick={handleNavLinkClick}
             >
@@ -130,8 +128,8 @@ const Navbar = () => {
                   to="/add-service"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-yellow-300 font-bold"
-                      : "text-white hover:text-yellow-300"
+                      ? "text-cyan-300 font-bold"
+                      : "text-white hover:text-cyan-300 transition duration-300"
                   }
                   onClick={handleNavLinkClick}
                 >
@@ -143,8 +141,8 @@ const Navbar = () => {
                   to="/my-reviews"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-yellow-300 font-bold"
-                      : "text-white hover:text-yellow-300"
+                      ? "text-cyan-300 font-bold"
+                      : "text-white hover:text-cyan-300 transition duration-300"
                   }
                   onClick={handleNavLinkClick}
                 >
@@ -156,8 +154,8 @@ const Navbar = () => {
                   to={`my-service/${user.email}`}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-yellow-300 font-bold"
-                      : "text-white hover:text-yellow-300"
+                      ? "text-cyan-300 font-bold"
+                      : "text-white hover:text-cyan-300 transition duration-300"
                   }
                   onClick={handleNavLinkClick}
                 >
@@ -179,13 +177,13 @@ const Navbar = () => {
                 alt="User Avatar"
                 title={user.displayName || "User"}
               />
-              <div className="absolute left-0 bottom-[-40px] w-max bg-white text-indigo-600 text-sm py-1 px-3 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute left-0 bottom-[-40px] w-max bg-white text-blue-800 text-sm py-1 px-3 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {user.displayName || "Guest"}
               </div>
             </div>
             <button
               onClick={handleLogout}
-              className="btn btn-sm bg-white text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white"
+              className="btn btn-sm bg-white text-blue-800 rounded-full hover:bg-blue-800 hover:text-white"
             >
               Logout
             </button>
@@ -194,13 +192,13 @@ const Navbar = () => {
           <>
             <NavLink
               to="/auth/login"
-              className="btn btn-sm bg-white text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white"
+              className="btn btn-sm bg-white text-blue-800 rounded-full hover:bg-blue-800 hover:text-white"
             >
               Login
             </NavLink>
             <NavLink
               to="/auth/register"
-              className="btn btn-sm bg-white text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white"
+              className="btn btn-sm bg-white text-blue-800 rounded-full hover:bg-blue-800 hover:text-white"
             >
               Register
             </NavLink>
