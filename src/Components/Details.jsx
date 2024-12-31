@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import DetailsCard from './DetailsCard';
+import AddReview from './AddReview';
 
 const Details = () => {
     const data = useLoaderData();
@@ -8,6 +9,7 @@ const Details = () => {
     return (
         <div>
             <DetailsCard data={data} />
+            <AddReview />
         </div>
     );
 };

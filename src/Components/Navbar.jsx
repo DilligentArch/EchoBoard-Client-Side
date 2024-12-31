@@ -18,7 +18,7 @@ const Navbar = () => {
   const handleNavLinkClick = () => {
     setIsLoading(true);
   };
-
+    // console.log("User:", user);
   return (
     <nav className="navbar bg-blue-800 text-white max-w-screen-2xl mx-auto shadow-lg">
       <Toaster />
