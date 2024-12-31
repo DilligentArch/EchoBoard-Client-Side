@@ -14,6 +14,7 @@ import AddService from "./Components/AddService";
 import ServiceList from "./Components/ServiceList";
 import PrivateRoute from "./PrivateLayout/PrivateRoute";
 import MyService from "./Components/MyService";
+import Details from "./Components/Details";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,12 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
         <MyService />
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.email}`),
+        loader: ({ params }) =>   fetch(`http://localhost:5000/services?email=${params.email}`),
+      },
+      {
+        path: "/services/:id", 
+        element: <Details></Details>,
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
       },
     ],
     
