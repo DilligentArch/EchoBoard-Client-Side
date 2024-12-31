@@ -83,7 +83,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <img src="/complaint.png" alt="EchoBoard" className="w-16 h-16" />
+          <NavLink to={"/"}> <img src="/complaint.png" alt="EchoBoard" className="w-16 h-16" /></NavLink>
           <NavLink
             to="/"
             className="ml-3 text-3xl font-bold text-cyan-300 hover:text-cyan-400 transition duration-300"

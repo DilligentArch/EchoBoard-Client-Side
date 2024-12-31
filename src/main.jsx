@@ -24,6 +24,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        loader:()=>fetch("http://localhost:5000/service/top-six"),
       },
       {
         path: '/auth/login',
