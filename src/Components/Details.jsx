@@ -7,9 +7,9 @@ const Details = () => {
     const data = useLoaderData();
     
     return (
-        <div>
+        <div className='mt-2'>
             <DetailsCard data={data} />
-            <AddReview />
+            <AddReview data={data} />
         </div>
     );
 };
