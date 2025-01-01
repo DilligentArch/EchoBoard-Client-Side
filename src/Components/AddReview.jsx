@@ -1,13 +1,17 @@
 import { Rating } from '@smastrom/react-rating';
 import React, { useContext } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '@smastrom/react-rating/style.css'; // Import the Rating component's styles
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
-const AddReview = ({data}) => {
+const AddReview = ({ data }) => {
   const { user } = useContext(AuthContext); // Access user info from AuthContext
+  const navigate = useNavigate(); // Initialize useNavigate
   const currentDate = new Date().toLocaleDateString();
-  const {_id}=data;
+  const { _id } = data;
 
   const {
     register,
@@ -24,23 +28,48 @@ const AddReview = ({data}) => {
   });
 
   function onSubmit(data) {
+    // Redirect to login page if user is not authenticated
+    if (!user) {
+      toast.error("You must be logged in to submit a review.");
+      navigate('/auth/login');
+      return;
+    }
+
     const enrichedData = {
       ...data,
-      userImage: user?.photoURL || 'https://via.placeholder.com/50',
-      userName: user?.displayName || 'Anonymous',
+      userImage: user.photoURL || 'https://via.placeholder.com/50',
+      userName: user.displayName || 'Anonymous',
       addedDate: currentDate,
-      id:_id,
+      id: _id,
+      userEmail: user.email,
     };
-    alert(JSON.stringify(enrichedData, undefined, 2));
-    reset();
+
+    axios
+      .post('http://localhost:5000/reviews', enrichedData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        const data = response.data;
+        if (data.insertedId) {
+          toast.success('Review posted successfully!');
+          reset(); // Reset the form
+        } else {
+          toast.error('Failed to post review. Please try again.');
+        }
+      })
+      .catch(() => {
+        toast.error('Failed to post review.');
+      });
   }
 
   return (
-    <div className='mt-6'>
+    <div className="mt-6">
       <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-4">
         Share Your Experience
       </h1>
-      <p className="text-center text-gray-600 mb-6">
+      <p className="text-center text-gray-600 mb-14">
         We value your feedback! Please provide a detailed review of the service and rate your experience.
       </p>
       <form
