@@ -4,7 +4,7 @@ const ShowReview = ({ review }) => {
   const { review: userReview, rating, userName, userImage, addedDate } = review;
 
   return (
-    <div className="p-6 bg-gradient-to-r from-blue-50 via-white to-blue-50 shadow-lg rounded-lg max-w-md mx-auto">
+    <div className="p-6 md:w-2/3  max-w-screen-2xl mx-auto    rounded-lg  ">
       {/* User Info */}
       <div className="flex items-center space-x-4 mb-4">
         <img
@@ -18,8 +18,13 @@ const ShowReview = ({ review }) => {
         </div>
       </div>
 
+      {/* Review Text */}
+      <p className="text-gray-800 mb-4">
+        <span className="font-medium">Review: </span>{userReview}
+      </p>
+
       {/* Rating */}
-      <div className="flex items-center mb-4">
+      <div className="flex items-center">
         <span className="text-blue-800 font-medium mr-2">Rating:</span>
         <div className="flex items-center">
           {Array.from({ length: 5 }, (_, index) => (
@@ -38,11 +43,6 @@ const ShowReview = ({ review }) => {
         </div>
         <span className="text-sm text-gray-600 ml-2">{rating} / 5</span>
       </div>
-
-      {/* Review Text */}
-      <p className="text-gray-800">
-        <span className="font-medium">Review: </span>{userReview}
-      </p>
     </div>
   );
 };

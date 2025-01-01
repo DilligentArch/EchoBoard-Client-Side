@@ -2,25 +2,29 @@ import React from 'react';
 import Slider from './Slider';
 import { useLoaderData } from 'react-router-dom';
 import HomeCard from './HomeCard';
+import MeetOurPartners from './MeetOurPartners';
+import HowItWorks from './HowItWorks';
+import ImpactSection from './ImpactSection';
 
 const Home = () => {
     const data = useLoaderData();
     return (
         <div className="bg-gray-50">
+               {/* Slider Section */}
+               <div>
+                <Slider />
+            </div>
             {/* Welcome Section */}
-            <div className="text-center bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white py-12 px-6 shadow-lg">
-                <h1 className="text-5xl font-extrabold mb-6">
+            <div className="text-center  text-white py-12 px-6 shadow-lg">
+                <h1 className="text-5xl font-extrabold mb-6 text-black">
                     Welcome to <span className="text-cyan-300">EchoBoard</span>
                 </h1>
-                <p className="text-xl font-light italic">
+                <p className="text-xl font-light italic text-black">
                     "Your voice matters. Together, we shape a world of honest feedback and trustworthy services."
                 </p>
             </div>
 
-            {/* Slider Section */}
-            <div>
-                <Slider />
-            </div>
+         
 
             {/* Heading for Random Cards */}
             <div className="text-center mt-16 mb-8">
@@ -42,6 +46,9 @@ const Home = () => {
                     <p className="text-center text-gray-500">No services found.</p>
                 )}
             </div>
+            <MeetOurPartners> </MeetOurPartners>
+            <HowItWorks> </HowItWorks>
+            <ImpactSection> </ImpactSection>
         </div>
     );
 };

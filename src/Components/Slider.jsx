@@ -1,5 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion } from 'framer-motion'; // Import Framer Motion
 import 'swiper/css';
 import 'swiper/css/autoplay'; // Import Swiper autoplay styles
 import { Autoplay } from 'swiper/modules'; // Import Swiper autoplay module
@@ -8,63 +9,92 @@ export default () => {
   return (
     <Swiper
       spaceBetween={0} // No gap between slides
-      slidesPerView={3} // Default slides per view (on larger screens)
+      slidesPerView={1} // Default: 1 slide per view
       breakpoints={{
-        320: { // For screens with width >= 320px (mobile)
-          slidesPerView: 1, // Show 1 slide on mobile
-        },
         768: { // For screens with width >= 768px (tablet and larger)
-          slidesPerView: 2, // Show 2 slides on tablets
+          slidesPerView: 1, // Still show 1 slide on tablets
         },
         1024: { // For screens with width >= 1024px (desktop)
-          slidesPerView: 3, // Show 3 slides on desktop
+          slidesPerView: 1, // Still show 1 slide on desktop
         },
       }}
       modules={[Autoplay]} // Include the autoplay module
       autoplay={{
-        delay: 3000, // Delay between transitions (in ms)
+        delay: 3500, // Delay between transitions (in ms)
         disableOnInteraction: false, // Keep autoplay active on user interaction
       }}
       loop={true} // Enable infinite loop
     >
       <SwiperSlide>
         <div className="relative">
-          <img className="w-full h-60 " src="/first.jpg" alt="Slide 1" />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-xl font-bold">
-            Discover Services You Can Trust
-          </div>
+          <img className="w-full h-[35rem]" src="/first.jpg" alt="Slide 1" />
+          <motion.div
+            className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          >
+            "Unlock the Potential of Trusted Services with Real User Feedback."
+          </motion.div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="relative">
-          <img className="w-full h-60 object-cover" src="/second.jpg" alt="Slide 2" />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-xl font-bold">
-            Share Your Experiences with the World
-          </div>
+          <img className="w-full h-[35rem]" src="/second.jpg" alt="Slide 2" />
+          <motion.div
+            className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          >
+            "Every Story Matters — Share Yours and Inspire Change."
+          </motion.div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="relative">
-          <img className="w-full h-60 object-cover" src="/third.jpg" alt="Slide 3" />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-xl font-bold">
-            Your Feedback, Our Priority
-          </div>
+          <img className="w-full h-[35rem]" src="/third.jpg" alt="Slide 3" />
+          <motion.div
+            className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          >
+            "Join a Community Shaping the Future of Transparent Services."
+          </motion.div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="relative">
-          <img className="w-full h-60 object-cover" src="/fourth.jpg" alt="Slide 3" />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-xl font-bold">
-          Explore Reviews That Matter to You
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="relative">
-          <img className="w-full h-60 object-cover" src="/fifth.jpg" alt="Slide 3" />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-xl font-bold">
-          Empowering Choices Through Honest Feedback
-          </div>
+          <img className="w-full h-[35rem]" src="/fourth.jpg" alt="Slide 4" />
+          <motion.div
+            className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          >
+            "Make Informed Choices with Honest and Reliable Reviews."
+          </motion.div>
         </div>
       </SwiperSlide>
     </Swiper>
