@@ -29,7 +29,7 @@ const MyServiceCard = ({ service }) => {
 
   const updateNow = (e) => {
     e.preventDefault();
-    console.log("Updated Data:", formData);
+    // console.log("Updated Data:", formData);
     document.getElementById(`update-modal-${_id}`).checked = false; // Close the modal
     // Call the API to update the service
 

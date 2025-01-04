@@ -66,7 +66,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/my-reviews" onClick={handleNavLinkClick}>
+                  <NavLink to={`/my-reviews/${user.email}`} onClick={handleNavLinkClick}>
                     My Reviews
                   </NavLink>
                 </li>
@@ -138,7 +138,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/my-reviews"
+                  to={`/my-reviews/${user.email}`} 
                   className={({ isActive }) =>
                     isActive
                       ? "text-cyan-300 font-bold"

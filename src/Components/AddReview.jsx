@@ -12,7 +12,7 @@ const AddReview = ({ data }) => {
   const { user } = useContext(AuthContext); // Access user info from AuthContext
   const navigate = useNavigate(); // Initialize useNavigate
   const currentDate = new Date().toLocaleDateString();
-  const { _id } = data;
+  const { _id,title } = data;
   const [reviews, setReviews] = useState([]);
 
   const {
@@ -51,10 +51,10 @@ const AddReview = ({ data }) => {
       addedDate: currentDate,
       id: _id,
       userEmail: user.email,
+      service:title,
     };
 
-    axios
-      .post('http://localhost:5000/reviews', enrichedData, {
+    axios.post('http://localhost:5000/reviews', enrichedData, {
         headers: {
           'Content-Type': 'application/json',
         },

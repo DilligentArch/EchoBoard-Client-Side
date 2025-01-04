@@ -20,7 +20,7 @@ export default () => {
       }}
       modules={[Autoplay]} // Include the autoplay module
       autoplay={{
-        delay: 3500, // Delay between transitions (in ms)
+        delay: 5000, // Delay between transitions (in ms)
         disableOnInteraction: false, // Keep autoplay active on user interaction
       }}
       loop={true} // Enable infinite loop
