@@ -8,7 +8,7 @@ const ImpactSection = () => {
   const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://echoboard-server-side.vercel.app/services")
       .then((response) => response.json())
       .then((data) => {
         setService(data || []); // Ensure fallback to empty array
@@ -18,14 +18,14 @@ const ImpactSection = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://echoboard-server-side.vercel.app/reviews")
       .then((response) => response.json())
       .then((data) => setReview(data || [])) // Ensure fallback to empty array
       .catch(() => setReview([]));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://echoboard-server-side.vercel.app/users")
       .then((response) => response.json())
       .then((data) => setUser(data || [])) // Ensure fallback to empty array
       .catch(() => setUser([]));

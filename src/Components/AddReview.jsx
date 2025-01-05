@@ -31,7 +31,7 @@ const AddReview = ({ data }) => {
 
   // Fetch existing reviews
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${_id}`)
+    fetch(`https://echoboard-server-side.vercel.app/reviews/${_id}`)
       .then((response) => response.json())
       .then((data) => setReviews(data));
   }, [_id]);
@@ -54,7 +54,7 @@ const AddReview = ({ data }) => {
       service:title,
     };
 
-    axios.post('http://localhost:5000/reviews', enrichedData, {
+    axios.post('https://echoboard-server-side.vercel.app/reviews', enrichedData, {
         headers: {
           'Content-Type': 'application/json',
         },
