@@ -101,12 +101,7 @@ const Login = () => {
 
                 </form>
                 <div className="flex justify-between items-center mt-4 text-sm text-white">
-                    <button
-                        onClick={() => navigate("/auth/reset-password")}
-                        className="hover:underline"
-                    >
-                        Forgot Password?
-                    </button>
+                   
                     <Link to="/auth/register" className="hover:underline">
                         Register
                     </Link>
