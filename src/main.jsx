@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader:()=>fetch("http://localhost:5000/service/top-six"),
+        loader:()=>fetch("https://echoboard-server-side.vercel.app/service/top-six"),
       },
       {
         path: '/auth/login',
@@ -46,26 +46,26 @@ const router = createBrowserRouter([
       {
         path: '/services',
         element: <ServiceList />,
-        loader:()=>fetch("http://localhost:5000/services"),
+        loader:()=>fetch("https://echoboard-server-side.vercel.app/services"),
       },
       {
         path: "/my-service/:email", 
         element: <PrivateRoute>
         <MyService />
         </PrivateRoute>,
-        loader: ({ params }) =>    fetch(`http://localhost:5000/services?addedBy=${params.email}`),
+        loader: ({ params }) =>    fetch(`https://echoboard-server-side.vercel.app/services?addedBy=${params.email}`),
       },
       {
         path: "/services/:id", 
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+        loader: ({ params }) => fetch(`https://echoboard-server-side.vercel.app/services/${params.id}`),
       },
       {
         path: "/my-reviews/:email", 
         element: <PrivateRoute>
         <MyReviews />
         </PrivateRoute>,
-        loader: ({ params }) =>   fetch(`http://localhost:5000/reviews?email=${params.email}`),
+        loader: ({ params }) =>   fetch(`https://echoboard-server-side.vercel.app/reviews?email=${params.email}`),
       },
       
     ],

@@ -10,7 +10,7 @@ const MyReviewsCard = ({ item, setReviews, reviews }) => {
   const [updatedRating, setUpdatedRating] = useState(rating);
 
   const handleSave = (reviewId) => {
-    fetch(`http://localhost:5000/reviews/${reviewId}`, {
+    fetch(`https://echoboard-server-side.vercel.app/reviews/${reviewId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const handleDelete = (reviewId) => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/reviews/${reviewId}`, {
+      fetch(`https://echoboard-server-side.vercel.app/reviews/${reviewId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -65,7 +65,7 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       if (currentUser?.email) {
         axios
-          .post("http://localhost:5000/users", {
+          .post("https://echoboard-server-side.vercel.app/users", {
             name: currentUser?.displayName || "Anonymous",
             image: currentUser?.photoURL || "https://via.placeholder.com/150",
             email: currentUser?.email,

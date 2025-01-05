@@ -33,7 +33,7 @@ const MyServiceCard = ({ service }) => {
     document.getElementById(`update-modal-${_id}`).checked = false; // Close the modal
     // Call the API to update the service
 
-    fetch(`http://localhost:5000/services/${_id}`, {
+    fetch(`https://echoboard-server-side.vercel.app/services/${_id}`, {
       method: "PUT",
       headers: {
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const MyServiceCard = ({ service }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/services/${id}`, {
+        fetch(`https://echoboard-server-side.vercel.app/services/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

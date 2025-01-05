@@ -40,7 +40,7 @@ const AddService = () => {
     };
 
     axios
-      .post("http://localhost:5000/services", newService, {
+      .post("https://echoboard-server-side.vercel.app/services", newService, {
         headers: {
           "Content-Type": "application/json",
         },
