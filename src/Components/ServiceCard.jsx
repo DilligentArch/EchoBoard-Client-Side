@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
 const MotionNavLink = motion(NavLink);
 
 const ServiceCard = ({ singleData }) => {
   const { image, title, description, category, price } = singleData;
+  const user= useContext(AuthContext);
 
   const cardVariants = {
     initial: { opacity: 0, y: 20 },

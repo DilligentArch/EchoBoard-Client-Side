@@ -7,7 +7,7 @@ const Navbar = () => {
   const location = useLocation();
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true); // State to track loading
+  const [loading, setLoading] = useState(true);
 
   // Simulate data fetching or page loading
   useEffect(() => {
@@ -17,7 +17,7 @@ const Navbar = () => {
     }, 1000); // Simulate a 1-second data fetch
 
     return () => clearTimeout(timeout); // Cleanup timeout on component unmount
-  }, [location.pathname]); // Run on page navigation
+  }, [location.pathname]);
 
   // Set dynamic page titles
   useEffect(() => {
@@ -53,7 +53,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar bg-blue-800 text-white max-w-screen-2xl mx-auto shadow-lg">
+    <nav className="navbar bg-blue-800 text-white max-w-screen-2xl mx-auto shadow-lg relative z-50">
       <Toaster />
       <div className="navbar-start">
         <div className="dropdown">
@@ -79,7 +79,7 @@ const Navbar = () => {
           </button>
           <ul
             tabIndex="0"
-            className="menu menu-sm dropdown-content mt-3 z-[1] w-52 rounded-box bg-white p-2 shadow text-blue-800"
+            className="menu menu-sm dropdown-content mt-3 z-50 w-52 rounded-box bg-white p-2 shadow text-blue-800"
           >
             <li>
               <NavLink to="/">Home</NavLink>
