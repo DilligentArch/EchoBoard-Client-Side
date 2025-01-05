@@ -78,23 +78,23 @@ const handleDelete = (reviewId) => {
 
   return (
     <>
-      <div className="flex items-start bg-white shadow-md rounded-lg p-6">
+      <div className="lg:flex items-start bg-white shadow-md rounded-lg p-6">
         <div className="flex-grow">
           <h3 className="text-lg font-bold text-indigo-700">{service}</h3>
           <Rating value={rating} readOnly style={{ maxWidth: 150 }} />
           <p className="mt-2 text-gray-600">{review}</p>
          
         </div>
-        <div className="flex flex-col space-y-2 ml-4 my-auto">
+        <div className="flex flex-col space-y-2 ml-4 mt-4  lg:mt-16">
           <label
             htmlFor={`edit-modal-${_id}`}
-            className="bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700 cursor-pointer"
+            className="bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700 cursor-pointer text-center"
           >
             Edit
           </label>
           <button
             onClick={() => handleDelete(_id)}
-            className="bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700"
+            className="bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700 text-center"
           >
             Delete
           </button>

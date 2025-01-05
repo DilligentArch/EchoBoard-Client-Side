@@ -111,7 +111,7 @@ const MyServiceCard = ({ service }) => {
           </label>
           <button
             onClick={()=>deleteNow(_id)}
-            className="bg-red-500 text-white mt-4 lg:mt-0  px-3 py-1 rounded-lg hover:bg-red-600"
+            className="bg-red-500 text-white mt-4 lg:mt-0   px-3 py-1 rounded-lg hover:bg-red-600"
           >
             Delete
           </button>
