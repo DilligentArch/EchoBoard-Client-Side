@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyReviewsCard = ({ item, setReviews, reviews }) => {
   const { _id, review, rating, service } = item;
@@ -40,23 +41,40 @@ const MyReviewsCard = ({ item, setReviews, reviews }) => {
       
   };
 
-  const handleDelete = (reviewId) => {
-    if (window.confirm("Are you sure you want to delete this review?")) {
+ 
+
+const handleDelete = (reviewId) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
       fetch(`http://localhost:5000/reviews/${reviewId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            toast.success("Review deleted successfully!");
+            Swal.fire("Deleted!", "Your review has been deleted.", "success");
             const remainingReviews = reviews.filter((r) => r._id !== reviewId);
             setReviews(remainingReviews); // Update the state to remove the deleted review
           } else {
-            toast.error("Failed to delete review.");
+            Swal.fire("Error!", "Failed to delete the review.", "error");
           }
+        })
+        .catch((error) => {
+          Swal.fire("Error!", "Something went wrong. Please try again.", "error");
+          console.error("Error deleting review:", error);
         });
     }
-  };
+  });
+};
+
 
   return (
     <>

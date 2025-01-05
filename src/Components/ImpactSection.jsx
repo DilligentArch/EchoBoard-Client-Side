@@ -1,7 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 
 const ImpactSection = () => {
+  const [review, setReview] = useState([]); // Default to an empty array
+  const [user, setUser] = useState([]); // Default to an empty array
+  const [service, setService] = useState([]); // Default to an empty array
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((response) => response.json())
+      .then((data) => {
+        setService(data || []); // Ensure fallback to empty array
+        setLoading(false); // Mark loading as false
+      })
+      .catch(() => setLoading(false));
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews")
+      .then((response) => response.json())
+      .then((data) => setReview(data || [])) // Ensure fallback to empty array
+      .catch(() => setReview([]));
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((response) => response.json())
+      .then((data) => setUser(data || [])) // Ensure fallback to empty array
+      .catch(() => setUser([]));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-40">
+        <p className="text-indigo-700 font-bold">Loading data...</p>
+      </div>
+    );
+  }
+
   return (
     <section className="bg-indigo-100 py-12 px-6 md:px-16">
       <div className="max-w-screen-xl mx-auto">
@@ -12,19 +49,19 @@ const ImpactSection = () => {
           {/* Stats */}
           <div className="text-center bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold text-indigo-700">
-              <CountUp end={1500} duration={10} />+
+              <CountUp end={service.length} duration={10} />+
             </h3>
             <p className="text-gray-600 mt-2">Verified Services</p>
           </div>
           <div className="text-center bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold text-indigo-700">
-              <CountUp end={25000} duration={10} />+
+              <CountUp end={review.length} duration={10} />+
             </h3>
             <p className="text-gray-600 mt-2">Reviews Shared</p>
           </div>
           <div className="text-center bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold text-indigo-700">
-              <CountUp end={10000} duration={10} />+
+              <CountUp end={user.length} duration={10} />+
             </h3>
             <p className="text-gray-600 mt-2">Happy Users</p>
           </div>
