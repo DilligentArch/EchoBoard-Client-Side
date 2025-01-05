@@ -17,12 +17,6 @@ const ShowReview = ({ review }) => {
           <p className="text-sm text-gray-600">Reviewed on: {addedDate}</p>
         </div>
       </div>
-
-      {/* Review Text */}
-      <p className="text-gray-800 mb-4">
-        <span className="font-medium">Review: </span>{userReview}
-      </p>
-
       {/* Rating */}
       <div className="flex items-center">
         <span className="text-blue-800 font-medium mr-2">Rating:</span>
@@ -43,6 +37,12 @@ const ShowReview = ({ review }) => {
         </div>
         <span className="text-sm text-gray-600 ml-2">{rating} / 5</span>
       </div>
+      {/* Review Text */}
+      <p className="text-gray-800 mb-4">
+        <span className="font-medium">Review: </span>{userReview}
+      </p>
+
+      
     </div>
   );
 };

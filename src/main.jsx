@@ -17,17 +17,19 @@ import MyService from "./Components/MyService";
 import Details from "./Components/Details";
 import ShowReview from "./Components/ShowReview";
 import MyReviews from "./Components/MyReviews";
+import ErrorComponent from "./Components/ErrorComponenet";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main/>,
-    // errorElement: <ErrorPage />,
+    
+    errorElement: <ErrorComponent />,
     children: [
       {
         index: true,
         element: <Home />,
-        loader:()=>fetch("https://echoboard-server-side.vercel.app/service/top-six"),
+        loader:()=>fetch("http://localhost:5000/service/top-six"),
       },
       {
         path: '/auth/login',
@@ -44,26 +46,26 @@ const router = createBrowserRouter([
       {
         path: '/services',
         element: <ServiceList />,
-        loader:()=>fetch("https://echoboard-server-side.vercel.app/services"),
+        loader:()=>fetch("http://localhost:5000/services"),
       },
       {
         path: "/my-service/:email", 
         element: <PrivateRoute>
         <MyService />
         </PrivateRoute>,
-        loader: ({ params }) =>    fetch(`https://echoboard-server-side.vercel.app/services?addedBy=${params.email}`),
+        loader: ({ params }) =>    fetch(`http://localhost:5000/services?addedBy=${params.email}`),
       },
       {
         path: "/services/:id", 
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`https://echoboard-server-side.vercel.app/services/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/my-reviews/:email", 
         element: <PrivateRoute>
         <MyReviews />
         </PrivateRoute>,
-        loader: ({ params }) =>   fetch(`https://echoboard-server-side.vercel.app/reviews?email=${params.email}`),
+        loader: ({ params }) =>   fetch(`http://localhost:5000/reviews?email=${params.email}`),
       },
       
     ],

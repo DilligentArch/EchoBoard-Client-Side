@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const MotionNavLink = motion(NavLink);
 
 const ServiceCard = ({ singleData }) => {
-  const { image, title, description, category, price } = singleData;
-  const user= useContext(AuthContext);
+  const { image, title, description, category, price, _id } = singleData;
+  const { user } = useContext(AuthContext); // Access the user context
+  const navigate = useNavigate();
 
   const cardVariants = {
     initial: { opacity: 0, y: 20 },
@@ -15,8 +17,20 @@ const ServiceCard = ({ singleData }) => {
     exit: { opacity: 0, y: 20 },
   };
 
+  const handleViewDetails = () => {
+    if (user) {
+      // If user is logged in, navigate to the details page
+      navigate(`/services/${_id}`);
+    } else {
+      // If user is not logged in, redirect to login page
+      navigate("/auth/login");
+      toast.error("Please login to view details.");
+    }
+  };
+
   return (
     <motion.div
+    
       variants={cardVariants}
       initial="initial"
       animate="animate"
@@ -25,6 +39,7 @@ const ServiceCard = ({ singleData }) => {
       className="bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300"
     >
       {/* Image with animation */}
+      <Toaster />
       <motion.img
         src={image}
         alt={title}
@@ -79,20 +94,20 @@ const ServiceCard = ({ singleData }) => {
             BDT {price.toFixed(2)}
           </motion.p>
 
-          <MotionNavLink
-                        to={`/services/${singleData._id}`}
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        whileHover={{
-                            scale: 1.05,
-                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-indigo-600 text-white px-4 py-2 text-sm rounded-lg hover:bg-indigo-700 transition"
-                    >
-                        View Details
-                    </MotionNavLink>
+          <motion.button
+            onClick={handleViewDetails}
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-indigo-600 text-white px-4 py-2 text-sm rounded-lg hover:bg-indigo-700 transition"
+          >
+            View Details
+          </motion.button>
         </div>
       </div>
     </motion.div>

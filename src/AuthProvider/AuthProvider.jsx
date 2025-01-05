@@ -65,16 +65,16 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       if (currentUser?.email) {
         axios
-          .post("https://echoboard-server-side.vercel.app/users", {
+          .post("http://localhost:5000/users", {
             name: currentUser?.displayName || "Anonymous",
             image: currentUser?.photoURL || "https://via.placeholder.com/150",
             email: currentUser?.email,
           })
           .then((response) => {
             if (response.data.message === "User already exists") {
-              console.log("User already exists in the database.");
+              // console.log("User already exists in the database.");
             } else {
-              console.log("User added to the database successfully.");
+              // console.log("User added to the database successfully.");
             }
           })
           .catch((error) => {

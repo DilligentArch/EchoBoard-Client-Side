@@ -5,6 +5,7 @@ import HomeCard from './HomeCard';
 import MeetOurPartners from './MeetOurPartners';
 import HowItWorks from './HowItWorks';
 import ImpactSection from './ImpactSection';
+import ServiceCard from './ServiceCard';
 
 const Home = () => {
     const data = useLoaderData();
@@ -40,7 +41,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-16">
                 {data.length > 0 ? (
                     data.map((singleData) => (
-                        <HomeCard key={singleData._id} singleData={singleData} />
+                        <ServiceCard key={singleData._id} singleData={singleData} />
                     ))
                 ) : (
                     <p className="text-center text-gray-500">No services found.</p>

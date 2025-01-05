@@ -10,7 +10,7 @@ const MyReviewsCard = ({ item, setReviews, reviews }) => {
   const [updatedRating, setUpdatedRating] = useState(rating);
 
   const handleSave = (reviewId) => {
-    fetch(`https://echoboard-server-side.vercel.app/reviews/${reviewId}`, {
+    fetch(`http://localhost:5000/reviews/${reviewId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const handleDelete = (reviewId) => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`https://echoboard-server-side.vercel.app/reviews/${reviewId}`, {
+      fetch(`http://localhost:5000/reviews/${reviewId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -81,10 +81,11 @@ const handleDelete = (reviewId) => {
       <div className="flex items-start bg-white shadow-md rounded-lg p-6">
         <div className="flex-grow">
           <h3 className="text-lg font-bold text-indigo-700">{service}</h3>
-          <p className="mt-2 text-gray-600">{review}</p>
           <Rating value={rating} readOnly style={{ maxWidth: 150 }} />
+          <p className="mt-2 text-gray-600">{review}</p>
+         
         </div>
-        <div className="flex flex-col space-y-2 ml-4">
+        <div className="flex flex-col space-y-2 ml-4 my-auto">
           <label
             htmlFor={`edit-modal-${_id}`}
             className="bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700 cursor-pointer"
@@ -114,7 +115,7 @@ const handleDelete = (reviewId) => {
           <div className="space-y-4">
             <div>
               <label className="block text-gray-700 font-medium mb-1">
-                Updated Review
+                Update Review
               </label>
               <textarea
                 className="w-full border rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -125,7 +126,7 @@ const handleDelete = (reviewId) => {
             </div>
             <div>
               <label className="block text-gray-700 font-medium mb-1">
-                Updated Rating
+                Update Rating
               </label>
               <Rating
                 value={updatedRating}

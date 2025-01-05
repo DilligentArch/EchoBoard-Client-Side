@@ -33,7 +33,7 @@ const MyServiceCard = ({ service }) => {
     document.getElementById(`update-modal-${_id}`).checked = false; // Close the modal
     // Call the API to update the service
 
-    fetch(`https://echoboard-server-side.vercel.app/services/${_id}`, {
+    fetch(`http://localhost:5000/services/${_id}`, {
       method: "PUT",
       headers: {
           "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const MyServiceCard = ({ service }) => {
   };
 
   const deleteNow = (id) => {
-    console.log("Deleting service with ID:", _id);
+    // console.log("Deleting service with ID:", _id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -66,7 +66,7 @@ const MyServiceCard = ({ service }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://echoboard-server-side.vercel.app/services/${id}`, {
+        fetch(`http://localhost:5000/services/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
