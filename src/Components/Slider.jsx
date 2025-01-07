@@ -19,11 +19,11 @@ export default () => {
             slidesPerView: 1,
           },
         }}
-        modules={[Autoplay]}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        // modules={[Autoplay]}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
         loop={true}
       >
         <SwiperSlide>
