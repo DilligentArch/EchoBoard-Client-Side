@@ -9,20 +9,7 @@ EchoBoard is a **full-stack service review platform** that enables users to expl
 
 ---
 
-## 📌 **Table of Contents**
-- [Purpose](#-purpose)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Configuration](#-configuration)
-- [Dependencies](#-dependencies)
-- [Troubleshooting](#-troubleshooting)
-- [Contribution Guidelines](#-contribution-guidelines)
-- [License](#-license)
-- [Author & Acknowledgments](#-author--acknowledgments)
 
----
 
 ## 🚀 **Purpose**
 EchoBoard is designed to:
@@ -87,7 +74,7 @@ This project demonstrates expertise in **frontend-backend integration**, **authe
 ### **Setup Steps**
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/your-repo/echoboard.git
+   git clone https://github.com/DilligentArch/EchoBoard-Client-Side.git
    cd echoboard
    ```
 
@@ -178,14 +165,10 @@ We welcome contributions! To contribute:
 
 ---
 
-## 📜 **License**
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
----
 
 ## 👤 **Author & Acknowledgments**
-👨‍💻 Developed by **[Your Name](https://github.com/yourprofile)**.  
-💡 Special thanks to contributors and the open-source community!
+👨‍💻 Developed by **[Nayeb Ahmed Qureshi](https://github.com/yourprofile)**.  
 
 ---
 
