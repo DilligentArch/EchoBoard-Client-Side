@@ -168,7 +168,7 @@ We welcome contributions! To contribute:
 
 
 ## 👤 **Author & Acknowledgments**
-👨‍💻 Developed by **[Nayeb Ahmed Qureshi](https://github.com/yourprofile)**.  
+👨‍💻 Developed by **[Nayeb Ahmed Qureshi](https://github.com/DilligentArch)**.  
 
 ---
 
