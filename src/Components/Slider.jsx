@@ -26,18 +26,7 @@ export default () => {
         }}
         loop={true}
       >
-        <SwiperSlide>
-          <div className="relative">
-            <img className="w-full h-[35rem] " src="/first.jpg" alt="Slide 1" />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4">
-              
-             
-              "Unlock the Potential of Trusted Services with Real User Feedback."
-              </div>
-
-           
-          </div>
-        </SwiperSlide>
+       
         <SwiperSlide>
           <div className="relative">
             <img className="w-full h-[35rem] object-cover " src="/second.jpg" alt="Slide 2" />
