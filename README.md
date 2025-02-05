@@ -130,7 +130,7 @@ This project demonstrates expertise in **frontend-backend integration**, **authe
 
 ### **Backend**
 - `express`, `cors`, `dotenv`
-- `mongodb`, `jsonwebtoken`
+- `mongodb`
 
 ### **Dev Dependencies**
 - `eslint`, `eslint-plugin-react`
