@@ -78,7 +78,7 @@ const handleDelete = (reviewId) => {
 
   return (
     <>
-      <div className="lg:flex items-start bg-white shadow-md rounded-lg p-6">
+      <div className="lg:flex items-start bg-white shadow-md rounded-lg p-6 max-w-screen-2xl mx-auto">
         <div className="flex-grow">
           <h3 className="text-lg font-bold text-indigo-700">{service}</h3>
           <Rating value={rating} readOnly style={{ maxWidth: 150 }} />

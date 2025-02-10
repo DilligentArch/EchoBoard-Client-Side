@@ -10,7 +10,7 @@ import ServiceCard from './ServiceCard';
 const Home = () => {
     const data = useLoaderData();
     return (
-        <div className="bg-gray-50">
+        <div className="bg-gray-50 max-w-screen-2xl mx-auto">
                {/* Slider Section */}
                <div>
                 <Slider />

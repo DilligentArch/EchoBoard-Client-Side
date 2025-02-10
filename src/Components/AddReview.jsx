@@ -79,7 +79,7 @@ const AddReview = ({ data }) => {
   }
 
   return (
-    <div className="mt-6 space-y-6 w-full max-w-screen-2xl mx-auto p-6 bg-gradient-to-r from-blue-50 via-white to-blue-50 shadow-xl rounded-md">
+    <div className="mt-6 space-y-6 w-full max-w-screen-2xl mx-auto p-6 bg-gradient-to-r from-blue-50 via-white to-blue-50 shadow-xl rounded-md ">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="space-y-6 max-w-lg mx-auto p-6"

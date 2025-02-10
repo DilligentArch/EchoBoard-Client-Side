@@ -20,7 +20,7 @@ const MeetOurPartners = () => {
   ];
 
   return (
-    <div className="bg-blue-50 py-16 px-6">
+    <div className="bg-blue-50 py-16 px-6 max-w-screen-2xl mx-auto">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-6">Meet Our Partners</h2>
         <p className="text-lg text-gray-600 mb-12">

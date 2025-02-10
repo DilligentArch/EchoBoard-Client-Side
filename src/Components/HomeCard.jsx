@@ -10,7 +10,7 @@ const HomeCard = ({ singleData }) => {
     return (
         <div
             
-            className="bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300"
+            className="bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300 max-w-screen-2xl mx-auto"
         >
             {/* Image with animation */}
             <img

@@ -21,7 +21,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="bg-gray-100 py-16 px-6">
+    <div className="bg-gray-100 py-16 px-6 max-w-screen-2xl mx-auto">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-6">How It Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

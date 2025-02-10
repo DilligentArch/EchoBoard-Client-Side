@@ -4,7 +4,7 @@ const ShowReview = ({ review }) => {
   const { review: userReview, rating, userName, userImage, addedDate } = review;
 
   return (
-    <div className="p-6 md:w-2/3  max-w-screen-2xl mx-auto    rounded-lg  ">
+    <div className="p-6 md:w-2/3  max-w-screen-2xl mx-auto    rounded-lg max-w-screen-2xl mx-auto ">
       {/* User Info */}
       <div className="flex items-center space-x-4 mb-4">
         <img

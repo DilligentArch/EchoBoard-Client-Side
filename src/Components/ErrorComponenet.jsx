@@ -9,7 +9,7 @@ const ErrorComponent = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
+    <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
       {/* Error Icon */}
       <div className="flex items-center justify-center w-20 h-20 bg-blue-200 rounded-full">
         <span className="text-4xl font-bold text-blue-600">!</span>

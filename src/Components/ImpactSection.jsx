@@ -40,7 +40,7 @@ const ImpactSection = () => {
   }
 
   return (
-    <section className="bg-indigo-100 py-12 px-6 md:px-16">
+    <section className="bg-indigo-100 py-12 px-6 md:px-16 max-w-screen-2xl mx-auto">
       <div className="max-w-screen-xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-800 mb-8">
           EchoBoard: Building Connections & Trust

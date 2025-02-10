@@ -13,7 +13,7 @@ const ServiceList = () => {
   const filteredData = selectedCategory === "All" ? data : data.filter((item) => item.category === selectedCategory);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 max-w-screen-2xl mx-auto">
       {/* Heading */}
       <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
         Explore Our Services

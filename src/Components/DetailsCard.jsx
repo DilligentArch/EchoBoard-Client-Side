@@ -4,7 +4,7 @@ const DetailsCard = ({ data }) => {
   const { image, title, category, price, companyName, website, description } = data;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 max-w-screen-2xl mx-auto">
       {/* Main Card Section */}
       <div className="md:flex max-w-2xl mx-auto bg-gradient-to-br from-gray-100 to-gray-200 shadow-xl rounded-lg overflow-hidden">
         {/* Image Section */}
