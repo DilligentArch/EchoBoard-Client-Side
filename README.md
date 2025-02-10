@@ -1,81 +1,176 @@
-# EchoBoard
+![Screenshot 2025-02-04 035752](https://github.com/user-attachments/assets/f5f93064-e7e2-44e9-b145-022690b16ff9)
 
-**EchoBoard** is a comprehensive Service Review Application designed to allow users to interact with various services by reviewing and managing them. It is a full-stack application providing hands-on experience in user authentication, CRUD operations, secure database handling, and dynamic UI updates.
+# **EchoBoard - Service Review Application** ⭐
 
----
+EchoBoard is a **full-stack service review platform** that enables users to explore, review, and manage various services. It integrates **secure authentication**, **real-time data handling**, and **a dynamic UI** to offer a seamless user experience.
 
-## 🌐 Live Website
-[EchoBoard Live](https://echoboard-9d305.web.app)
-
----
-
-## 🚀 Purpose
-EchoBoard serves as a platform where users can:
-- Explore services added by others.
-- Share their experiences by posting reviews.
-- Add and manage their services and reviews seamlessly.
-
-This project demonstrates skills in **frontend and backend integration**, **secure user authentication**, and **responsive design**.
+## 🌐 **Live Demo**
+🔗 [EchoBoard Live](https://echoboard-9d305.web.app)
 
 ---
 
-## ✨ Key Features
-### General Features:
-- **Dynamic Title:** Webpage titles change dynamically based on the current route.
-- **404 Page:** Includes a custom "Not Found" page.
-- **Loading Spinner:** Displays a spinner when data is loading.
-- **Toast Notifications:** CRUD operations trigger relevant notifications.
-  
-### Authentication:
-- **Login/Registration:** Supports email/password-based login with form validation.
-- **Google Login:** Option for logging in using Google.
 
 
-### Services:
-- **Add Services:** Users can add new services with details like title, image, description, price, and more.
-- **View All Services:** Displays all services .
-- **Service Details Page:** Shows detailed information and associated reviews for a service.
-- **Search and Filter:** Users can search for services by keywords and filter them by categories.
+## 🚀 **Purpose**
+EchoBoard is designed to:
+- Help users **explore and review** services.
+- Allow users to **add and manage their own services**.
+- Provide an interactive experience using **real-time UI updates** and **secure authentication**.
 
-### Reviews:
-- **Add/Edit/Delete Reviews:** Logged-in users can post, edit, or delete reviews.
-- **Manage Reviews:** A dedicated page to manage all reviews posted by the user.
-
-### Responsive Design:
-The application is fully responsive and works seamlessly on mobile, tablet, and desktop devices.
+This project demonstrates expertise in **frontend-backend integration**, **authentication**, and **responsive UI design**.
 
 ---
 
-## 🛠️ Tech Stack
-### Frontend:
-- **React.js**: Frontend library for building user interfaces.
-- **React Router**: For client-side routing.
-- **Tailwind CSS**: Styling framework for rapid UI development.
+## ✨ **Key Features**
+### 🎯 **General Features**
+- **Dynamic Page Titles**: Updates based on the current route.
+- **404 Page**: Custom "Not Found" page.
+- **Loading Spinner**: Displays while fetching data.
+- **Toast Notifications**: Real-time feedback for user actions.
 
+### 🔑 **Authentication**
+- **User Registration & Login** (Email/Password authentication).
+- **Google Authentication** for a quick login process.
+- **Secure Session Management** with Firebase.
 
-### Backend:
-- **Node.js**: JavaScript runtime for server-side development.
-- **Express.js**: Web framework for Node.js.
-- **MongoDB**: NoSQL database for storing data.
+### 🛍 **Services**
+- **Add Services**: Users can create services with details like title, image, description, and price.
+- **View Services**: Displays a list of all available services.
+- **Service Details Page**: Detailed view including service description and user reviews.
+- **Search & Filter**: Search services by keyword and filter them by categories.
 
+### ⭐ **Reviews**
+- **Add/Edit/Delete Reviews**: Users can manage their reviews.
+- **Manage My Reviews**: A dedicated section to handle personal reviews.
 
-### Deployment:
-- **Frontend**: Hosted on Firebase.
-- **Backend**: Hosted on Vercel.
+### 📱 **Responsive UI**
+- Fully responsive for **mobile, tablet, and desktop devices**.
+
+---
+
+## 🛠 **Tech Stack**
+### **Frontend**
+- **React.js** - Component-based UI development.
+- **React Router** - Client-side routing.
+- **Tailwind CSS** - Fast and responsive styling.
+
+### **Backend**
+- **Node.js** - JavaScript runtime for the backend.
+- **Express.js** - Server-side framework.
+- **MongoDB** - NoSQL database for storing service and review data.
+
+### **Deployment**
+- **Frontend**: Hosted on **Firebase**.
+- **Backend**: Hosted on **Vercel**.
 
 ---
 
-## 📦 NPM Packages Used
-- **cors**: For managing Cross-Origin Resource Sharing.
-- **dotenv**: For managing environment variables securely.
-- **react-router-dom**: For routing.
-- **react-hot-toast**: For displaying toast notifications.
-- **react-icons**: For using scalable vector icons.
-- **swiper.js**: For slider.
-- **react-countup**: For showing  how many users, reviews, and services are in the platform.
-- **react-sweet-alert**: Used for handling deletions.
-- **framer-motion**: For animation.
+## ⚙️ **Installation**
+### **Prerequisites**
+- Install **Node.js** (`v16+` recommended).
+- MongoDB instance (local or cloud-based).
+- Firebase setup for authentication.
 
+### **Setup Steps**
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/DilligentArch/EchoBoard-Client-Side.git
+   cd echoboard
+   ```
 
+2. **Install Dependencies**:
+   ```sh
+   npm install
+   ```
+
+3. **Set Up Environment Variables**:
+   - Create a `.env` file in the root directory.
+   - Add the required variables:
+     ```
+     MONGO_URI=your_mongodb_connection_string
+     FIREBASE_API_KEY=your_firebase_api_key
+     JWT_SECRET=your_jwt_secret
+     ```
+
+4. **Run the Development Server**:
+   ```sh
+   npm run dev
+   ```
 
 ---
+
+## ▶️ **Usage**
+- **Start the Frontend**:
+  ```sh
+  npm run dev
+  ```
+- **Run the Backend** (if applicable):
+  ```sh
+  node server.js
+  ```
+- Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🔧 **Configuration**
+- **Firebase Authentication**: Ensure Firebase authentication is set up correctly.
+- **MongoDB Connection**: Verify the database connection string in `.env`.
+- **Environment Variables**: API keys and secrets must be properly configured.
+
+---
+
+## 📦 **Dependencies**
+### **Frontend**
+- `react`, `react-router-dom`
+- `axios`, `react-hot-toast`
+- `react-icons`, `swiper`
+- `react-countup`, `sweetalert2`
+- `@smastrom/react-rating`, `match-sorter`
+- `react-hook-form`, `localforage`
+
+### **Backend**
+- `express`, `cors`, `dotenv`
+- `mongodb`
+
+### **Dev Dependencies**
+- `eslint`, `eslint-plugin-react`
+- `tailwindcss`, `vite`, `daisyui`
+
+---
+
+## 🛠 **Troubleshooting**
+### 🔹 **Common Issues & Fixes**
+1. **Server Not Starting?**
+   - Ensure MongoDB is running.
+   - Check `.env` file configuration.
+
+2. **Authentication Issues?**
+   - Verify Firebase API keys.
+   - Ensure Firebase authentication methods are enabled.
+
+3. **Database Not Connecting?**
+   - Check the MongoDB connection string.
+
+4. **Frontend Not Loading?**
+   - Run `npm run dev` in the frontend directory.
+
+---
+
+## 🤝 **Contribution Guidelines**
+We welcome contributions! To contribute:
+1. **Fork the repository**.
+2. **Create a feature branch** (`feature/new-feature`).
+3. **Commit changes** (`git commit -m "Added new feature"`).
+4. **Push to GitHub** and open a **Pull Request**.
+
+---
+
+
+
+## 👤 **Author & Acknowledgments**
+👨‍💻 Developed by **[Nayeb Ahmed Qureshi](https://github.com/DilligentArch)**.  
+
+---
+
+### 🚀 **Happy Coding & Reviewing Services!** ⭐
+```
