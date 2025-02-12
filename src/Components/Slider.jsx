@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 
 export default () => {
   return (
-    <div className="relative z-10"> {/* Ensure Swiper is below the navbar */}
+    <div className="relative z-10 "> {/* Ensure Swiper is below the navbar */}
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
@@ -19,17 +19,17 @@ export default () => {
             slidesPerView: 1,
           },
         }}
-        modules={[Autoplay]}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
+        // modules={[Autoplay]}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
+        // loop={true}
       >
        
         <SwiperSlide>
           <div className="relative">
-            <img className="w-full h-[35rem] object-cover " src="/second.jpg" alt="Slide 2" />
+            <img className="w-full  h-[35rem] object-cover " src="/second.jpg" alt="Slide 2" />
             <div  className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4">
              
             
@@ -41,7 +41,7 @@ export default () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="relative">
-            <img className="w-full h-[35rem] object-cover " src="/third.jpg" alt="Slide 3" />
+            <img className="w-full pt-5 h-[35rem] object-cover " src="/third.jpg" alt="Slide 3" />
             <div
               className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4"
             
@@ -52,7 +52,7 @@ export default () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="relative">
-            <img className="w-full h-[35rem]" src="/fourth.jpg" alt="Slide 4" />
+            <img className="w-full  h-[35rem]" src="/fourth.jpg" alt="Slide 4" />
             <div
               className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-bold text-center px-4"
              
