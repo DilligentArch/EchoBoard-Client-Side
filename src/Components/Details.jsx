@@ -11,7 +11,7 @@ const Details = () => {
    
 
     return (
-        <div className='mt-2 mb-5 max-w-screen-2xl mx-auto'>
+        <div className='mt-2 mb-5 max-w-screen-2xl mx-auto pt-20'>
             <DetailsCard data={data} />
             <AddReview data={data} />
 

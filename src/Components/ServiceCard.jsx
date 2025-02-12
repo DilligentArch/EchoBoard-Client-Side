@@ -39,7 +39,7 @@ const ServiceCard = ({ singleData }) => {
       className="bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300"
     >
       {/* Image with animation */}
-      <Toaster />
+      
       <motion.img
         src={image}
         alt={title}

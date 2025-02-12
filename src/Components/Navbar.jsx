@@ -46,15 +46,15 @@ const Navbar = () => {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen justify-center items-center bg-white">
-        <span className="loading loading-spinner loading-lg text-blue-800"></span>
-      </div>
+      <div className="flex items-center justify-center min-h-screen bg-indigo-50">
+      <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+    </div>
     );
   }
 
   return (
     <nav className="bg-blue-800 text-white w-full fixed top-0 left-0 right-0 z-50 shadow-lg">
-      <Toaster />
+      
       <div className="max-w-screen-xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Left Side */}
         <div className="flex items-center">
@@ -123,6 +123,16 @@ const Navbar = () => {
                 }
               >
                 My Services
+              </NavLink>
+              <NavLink
+                to={`about-us`}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-cyan-300 font-bold"
+                    : "text-white hover:text-cyan-300 transition duration-300"
+                }
+              >
+                About Us
               </NavLink>
             </>
           )}
@@ -202,6 +212,9 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink to="/services">Services</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about-us">About Us</NavLink>
               </li>
               {user && (
                 <>

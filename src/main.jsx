@@ -18,6 +18,7 @@ import Details from "./Components/Details";
 import ShowReview from "./Components/ShowReview";
 import MyReviews from "./Components/MyReviews";
 import ErrorComponent from "./Components/ErrorComponenet";
+import AboutUs from "./Components/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader:()=>fetch("https://echoboard-server-side.vercel.app/service/top-six"),
+      },
+      {
+        path:'/about-us',
+        element: <AboutUs></AboutUs>,
+
       },
       {
         path: '/auth/login',

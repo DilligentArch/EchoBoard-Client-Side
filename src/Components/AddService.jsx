@@ -63,7 +63,7 @@ const AddService = () => {
 
   return (
     <div className="flex pt-16 justify-center items-center min-h-screen bg-indigo-50 my-1 max-w-screen-2xl mx-auto">
-      <Toaster />
+      
       <div className="w-full max-w-lg bg-indigo-600 shadow-lg rounded-lg p-8">
         <h2 className="text-3xl font-bold text-center text-white mb-6">
           Add a New Service
