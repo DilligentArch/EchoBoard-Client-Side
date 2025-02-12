@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 
 export default () => {
   return (
-    <div className="relative z-10 "> {/* Ensure Swiper is below the navbar */}
+    <div className="relative z-10 pt-14"> {/* Ensure Swiper is below the navbar */}
       <Swiper
         spaceBetween={0}
         slidesPerView={1}

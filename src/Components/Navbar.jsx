@@ -53,7 +53,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar bg-blue-800 text-white max-w-screen-2xl mx-auto shadow-lg  fixed z-50">
+    <nav className="navbar bg-blue-800 text-white max-w-screen-2xl mx-auto shadow-lg  fixed z-50 ">
       <Toaster />
       <div className="navbar-start">
         <div className="dropdown">
